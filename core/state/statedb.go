@@ -237,6 +237,11 @@ func (s *StateDB) AddRefund(gas uint64) {
 	s.refund += gas
 }
 
+// AppendJournalEntry adds gas to the refund counter
+func (s *StateDB) AppendJournalEntry(entry journalEntry) {
+	s.journal.append(entry)
+}
+
 // SubRefund removes gas from the refund counter.
 // This method will panic if the refund counter goes below zero
 func (s *StateDB) SubRefund(gas uint64) {
