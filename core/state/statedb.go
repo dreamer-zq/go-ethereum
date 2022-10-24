@@ -238,7 +238,7 @@ func (s *StateDB) AddRefund(gas uint64) {
 }
 
 // AppendJournalEntry adds gas to the refund counter
-func (s *StateDB) AppendJournalEntry(entry journalEntry) {
+func (s *StateDB) AppendJournalEntry(entry JournalEntry) {
 	s.journal.append(entry)
 }
 
